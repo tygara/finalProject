@@ -108,7 +108,7 @@ _start:
   xor al, [key + ecx]              ; XOR with key byte (decrypt)
   mov [decbuf + ecx], al           ; store decrypted byte in decbuf at same index
   inc ecx
-  jmp .deCrypt
+
 
   ; build buffer to assemble all pieces (labels, msg, key etc) into a single place 'buf'
   ; using the macro I made before so the data is contiguous 
@@ -141,9 +141,9 @@ _start:
   mov   esi,  420                   ; 0644 permissions
   mov   edx,  esi
   int   0x80
+  
+  ; write(fileDes, buf, total_len)
   mov   ebx,  eax
-
-; write(fileDes, buf, total_len)
   mov   eax,  4
   mov   ecx,  buf
   mov   edx,  edi                   ; restore total_len
