@@ -1,0 +1,4 @@
+Plain text: pokemon
+Key: members
+Encrypted text: 1D0A0607081D1D
+Decrypted text: pokemon
